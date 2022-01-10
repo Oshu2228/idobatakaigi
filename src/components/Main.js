@@ -1,26 +1,11 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react"
 
-import MessageInputField from './MessageInputField';
-import MessageList from './MessageList';
-
-const useStyles = makeStyles({
-  root: {
-    display: 'grid',
-    height: '100vh',
-    gridTemplateRows: '1fr auto',
-  },
-});
-
-const Main = ({ name }) => {
-  const classes = useStyles();
-
+const Main = () => {
   return (
-    <div className={classes.root}>
-      <MessageList />
-      <MessageInputField name={name} />
+    <div>
+      main
     </div>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main

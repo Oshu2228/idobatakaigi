@@ -46,7 +46,8 @@ export default function SignIn({setName}) {
   const classes = useStyles();
   const [disablede, setDisablede] = useState(true)
   const [string, setString] = useState("")
-  console.log(disablede, string);
+  const [isCompased, setIsCompased] = useState(false)
+  // console.log(disablede, string,isCompased);
 
   useEffect(()=>{
     const disabled = string === ""
@@ -72,6 +73,15 @@ export default function SignIn({setName}) {
             name="name"
             autoFocus
             onChange={(e) => setString(e.target.value) }
+            onKeyDown={(e)=>{
+              if(isCompased) return
+              if(e.key === "Enter"){
+                setName(e.target.value)
+                e.preventDefault()
+              }
+            }}
+            onCompositionStart={()=> setIsCompased(true)}
+            onCompositionEnd={()=> setIsCompased(false)}
           />
           
           
