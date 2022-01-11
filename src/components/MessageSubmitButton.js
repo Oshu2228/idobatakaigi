@@ -1,22 +1,23 @@
-import React from 'react';
-import { IconButton } from '@material-ui/core';
+import React from 'react'
+import IconButton from '@material-ui/core/IconButton';
 import SendIcon from '@material-ui/icons/Send';
 
-import { pushMessage } from '../firebase';
+import { pushMessage } from "../firebase"
 
-const MessageSubmitButton = ({ inputEl, name, setText, text }) => {
+
+const MessageSubmitButton = ({name, setText, text}) => {
   return (
-    <IconButton
-      disabled={text === ''}
+    <IconButton 
+      disabled={text === ""}
       onClick={() => {
-        pushMessage({ name, text });
-        setText('');
-        inputEl.current.focus();
+        pushMessage({name:"おにょ",text})
+        setText("")
       }}
-    >
+      >
+      
       <SendIcon />
-    </IconButton>
-  );
-};
+    </IconButton>   
+  )
+}
 
-export default MessageSubmitButton;
+export default MessageSubmitButton
